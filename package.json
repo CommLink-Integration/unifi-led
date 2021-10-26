@@ -1,0 +1,30 @@
+{
+  "name": "unifi-led",
+  "version": "0.1.0",
+  "description": "A package to connect to Ubiquiti Unifi LED controller",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CommLink-Integration/unifi-led.git"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^7.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "unifi",
+    "ueot",
+    "ubiquiti"
+  ],
+  "author": "Hunter Grayson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CommLink-Integration/unifi-led/issues"
+  },
+  "homepage": "https://github.com/CommLink-Integration/unifi-led#readme"
+}
