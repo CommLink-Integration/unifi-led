@@ -5,6 +5,8 @@ This package can get information about connected lights and light groups as well
 
 Deeper down there is also detailed device information. Basically anything that can be viewed from the Ubiquiti EoT LED controller web UI can be accessed.
 
+The API endpoints and usage were taken from the [Python unifiled repo](https://github.com/florisvdk/unifiled) by [florisvdk](https://github.com/florisvdk)
+
 **TODO:**
 - validate/improve error handling
 - use `axios.all()` for setting multiple devices simultaneously

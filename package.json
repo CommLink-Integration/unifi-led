@@ -1,8 +1,8 @@
 {
   "name": "unifi-led",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A package to connect to Ubiquiti Unifi LED controller",
-  "main": "index.js",
+  "main": "unifi-led.js",
   "dependencies": {
     "axios": "^0.24.0"
   },
