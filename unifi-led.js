@@ -11,7 +11,7 @@ class UnifiLED {
      * @param {number} [params.port=20443] - The port number the unit is listening on
      */
     constructor({ ip, port = 20443, username, password }) {
-        this._debug = true;
+        this._debug = false;
         this.baseUrl = `https://${ip}:${port}`;
         this.username = username;
         this.password = password;
@@ -47,7 +47,7 @@ class UnifiLED {
             }
         }
 
-        if (this._debug) console.log('Attempting to login using Unifi LED credentials')
+        if (this._debug) console.log('Attempting to login using Unifi LED credentials with options', options)
         
         return axios(options)
         .then(res => {
@@ -108,7 +108,23 @@ class UnifiLED {
 
         return axios(options)
         .then(res => {
-            return res.data
+            let response = [];
+            res.data.forEach(group => {
+                // changing the format of the response to more closely match the device return value
+                // also adding an isGroup boolean for easy determination
+                const {led, output, energy, devicesTurnedOn, ...rest} = group
+                response.push({
+                    isGroup: true,
+                    status: {
+                        led,
+                        output,
+                        energy,
+                        devicesTurnedOn
+                    },
+                    ...rest
+                })
+            })
+            return response;
         })
         .catch(async (err) => {
             if (err.response.status == 403) {
